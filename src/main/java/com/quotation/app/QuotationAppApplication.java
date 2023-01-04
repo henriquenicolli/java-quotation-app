@@ -1,8 +1,10 @@
-package com.quotationapp;
+package com.quotation.app;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.autoconfigure.domain.EntityScan;
 
+@EntityScan("com.quotation.app.model")
 @SpringBootApplication
 public class QuotationAppApplication {
 
