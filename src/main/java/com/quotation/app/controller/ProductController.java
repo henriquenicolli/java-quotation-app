@@ -24,7 +24,7 @@ public class ProductController {
         logger.info("Request para salvamento de produto recebido");
 
         productService.saveProduct(productDto);
-s
+
         return ResponseEntity.accepted().build();
     }
 
