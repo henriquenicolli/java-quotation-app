@@ -17,11 +17,11 @@ public class ProductController {
     @Autowired
     private ProductService productService;
 
-    private Logger logger = LoggerFactory.getLogger(ProductController.class);
+    private static final Logger LOGGER = LoggerFactory.getLogger(ProductController.class);
 
     @PostMapping(value = "/save")
     public ResponseEntity<String> saveProduct(@RequestBody ProductDto productDto) {
-        logger.info("Request para salvamento de produto recebido");
+        LOGGER.info("Request para salvamento de produto recebido");
 
         productService.saveProduct(productDto);
 
