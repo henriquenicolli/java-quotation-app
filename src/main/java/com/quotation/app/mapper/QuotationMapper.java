@@ -2,9 +2,11 @@ package com.quotation.app.mapper;
 
 import com.quotation.app.model.dto.QuotationDto;
 import com.quotation.app.model.entity.QuotationEntity;
+import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 import org.mapstruct.factory.Mappers;
 
+@Mapper
 public interface QuotationMapper {
 
     QuotationMapper INSTANCE = Mappers.getMapper(QuotationMapper.class);
