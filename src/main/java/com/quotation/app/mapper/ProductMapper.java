@@ -15,6 +15,12 @@ public interface ProductMapper {
     @Mapping(source = "productCode", target = "productCode")
     @Mapping(source = "valor", target = "valor")
     @Mapping(source = "description", target = "description")
-    ProductEntity mapFrom(ProductDto source);
+    ProductEntity mapEntityFromDto(ProductDto source);
+
+    @Mapping(source = "quantity", target = "quantity")
+    @Mapping(source = "productCode", target = "productCode")
+    @Mapping(source = "valor", target = "valor")
+    @Mapping(source = "description", target = "description")
+    ProductDto mapDtoFromEntity(ProductEntity roductEntity);
 
 }

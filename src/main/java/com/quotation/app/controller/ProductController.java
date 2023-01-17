@@ -6,10 +6,9 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @RequestMapping("/v1/products")
@@ -22,11 +21,16 @@ public class ProductController {
 
     @PostMapping(value = "/save")
     public ResponseEntity<String> saveProduct(@RequestBody ProductDto productDto) {
-        logger.info("Request para salvamento de produto recebido", productDto);
+        logger.info("Request para salvamento de produto recebido");
 
         productService.saveProduct(productDto);
-
+s
         return ResponseEntity.accepted().build();
+    }
+
+    @GetMapping(value = "/findAll")
+    public List<ProductDto> getAll() {
+        return productService.findAll();
     }
 
 }
