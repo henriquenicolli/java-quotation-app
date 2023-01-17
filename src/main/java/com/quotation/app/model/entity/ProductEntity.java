@@ -1,4 +1,4 @@
-package com.quotation.app.model;
+package com.quotation.app.model.entity;
 
 import jakarta.persistence.*;
 import lombok.Getter;
@@ -12,14 +12,18 @@ import java.math.BigDecimal;
 public class ProductEntity {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.TABLE)
     private long id;
+
     @Column(name="quantity")
     private int quantity;
+
     @Column(name="cod_product")
     private String productCode;
+
     @Column(name="price")
     private BigDecimal valor;
+
     @Column(name="description")
     private String description;
 
