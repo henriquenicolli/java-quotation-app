@@ -28,8 +28,10 @@ public class ProductController {
         return ResponseEntity.accepted().build();
     }
 
+    @CrossOrigin
     @GetMapping(value = "/findAll")
     public List<ProductDto> getAll() {
+        LOGGER.info("Request para listar todos produtos recebido");
         return productService.findAll();
     }
 

@@ -21,17 +21,18 @@ public class QuotationController {
 
     @PostMapping(value = "/save")
     public ResponseEntity<String> saveQuotation(@RequestBody QuotationDto quotationDto) {
-        LOGGER.info("Request para salvamento de produto recebido");
+        LOGGER.info("Request para salvamento de cotacao recebido");
 
         quotationService.saveQuotation(quotationDto);
 
         return ResponseEntity.accepted().build();
     }
 
+    @CrossOrigin
     @GetMapping(value = "/findAll")
     public List<QuotationDto> getAll() {
+        LOGGER.info("Request para listagem de cotacoes recebido");
         return quotationService.findAll();
     }
-
 
 }
