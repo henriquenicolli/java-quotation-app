@@ -4,6 +4,8 @@ import com.quotation.app.mapper.QuotationMapper;
 import com.quotation.app.model.dto.QuotationDto;
 import com.quotation.app.model.entity.QuotationEntity;
 import com.quotation.app.repository.QuotationRepository;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -16,10 +18,14 @@ public class QuotationService {
     @Autowired
     private QuotationRepository repository;
 
+    private final Logger LOGGER = LoggerFactory.getLogger(QuotationService.class);
+
     public void saveQuotation(QuotationDto quotationDto) {
         QuotationEntity entity = QuotationMapper.INSTANCE.mapEntityFromDto(quotationDto);
 
         repository.save(entity);
+
+        LOGGER.info("Cotacao salva com sucesso", entity);
     }
 
     public List<QuotationDto> findAll() {

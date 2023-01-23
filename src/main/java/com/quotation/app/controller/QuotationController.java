@@ -19,6 +19,7 @@ public class QuotationController {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(ProductController.class);
 
+    @CrossOrigin
     @PostMapping(value = "/save")
     public ResponseEntity<String> saveQuotation(@RequestBody QuotationDto quotationDto) {
         LOGGER.info("Request para salvamento de cotacao recebido");

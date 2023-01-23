@@ -18,14 +18,14 @@ public class ProductService {
     @Autowired
     private ProductRepository repository;
 
-    private Logger logger = LoggerFactory.getLogger(ProductService.class);
+    private final Logger LOGGER = LoggerFactory.getLogger(ProductService.class);
 
     public void saveProduct(ProductDto productDto) {
         final ProductEntity entity = ProductMapper.INSTANCE.mapEntityFromDto(productDto);
 
         repository.save(entity);
 
-        logger.info("Produto salvo com sucesso", productDto);
+        LOGGER.info("Produto salvo com sucesso", productDto);
     }
 
     public List<ProductDto> findAll() {

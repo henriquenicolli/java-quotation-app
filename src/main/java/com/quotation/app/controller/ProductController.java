@@ -19,6 +19,7 @@ public class ProductController {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(ProductController.class);
 
+    @CrossOrigin
     @PostMapping(value = "/save")
     public ResponseEntity<String> saveProduct(@RequestBody ProductDto productDto) {
         LOGGER.info("Request para salvamento de produto recebido");
