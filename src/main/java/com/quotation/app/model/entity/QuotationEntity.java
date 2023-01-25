@@ -6,7 +6,6 @@ import lombok.Setter;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
-import java.time.LocalDateTime;
 
 @Getter
 @Setter
@@ -17,8 +16,11 @@ public class QuotationEntity {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
 
+    @Column(name = "quotation_name")
+    private String quotationName;
+
     @Column(name="expiration_date")
-    private LocalDateTime expirationDate;
+    private LocalDate expirationDate;
 
     @Column(name="delivery_date")
     private LocalDate deliveryDate;

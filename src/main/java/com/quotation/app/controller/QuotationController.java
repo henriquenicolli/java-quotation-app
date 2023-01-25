@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+@CrossOrigin
 @RestController
 @RequestMapping("/v1/quotations")
 public class QuotationController {
@@ -19,7 +20,6 @@ public class QuotationController {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(ProductController.class);
 
-    @CrossOrigin
     @PostMapping(value = "/save")
     public ResponseEntity<String> saveQuotation(@RequestBody QuotationDto quotationDto) {
         LOGGER.info("Request para salvamento de cotacao recebido");
@@ -29,7 +29,6 @@ public class QuotationController {
         return ResponseEntity.accepted().build();
     }
 
-    @CrossOrigin
     @GetMapping(value = "/findAll")
     public List<QuotationDto> getAll() {
         LOGGER.info("Request para listagem de cotacoes recebido");

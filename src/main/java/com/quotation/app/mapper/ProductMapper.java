@@ -11,12 +11,14 @@ public interface ProductMapper {
 
     ProductMapper INSTANCE = Mappers.getMapper( ProductMapper.class );
 
+    @Mapping(source = "productName", target = "productName")
     @Mapping(source = "quantity", target = "quantity")
     @Mapping(source = "productCode", target = "productCode")
     @Mapping(source = "valor", target = "valor")
     @Mapping(source = "description", target = "description")
     ProductEntity mapEntityFromDto(ProductDto source);
 
+    @Mapping(source = "productName", target = "productName")
     @Mapping(source = "quantity", target = "quantity")
     @Mapping(source = "productCode", target = "productCode")
     @Mapping(source = "valor", target = "valor")

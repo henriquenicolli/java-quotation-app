@@ -15,6 +15,9 @@ public class ProductEntity {
     @GeneratedValue(strategy = GenerationType.TABLE)
     private long id;
 
+    @Column(name = "product_name")
+    private String productName;
+
     @Column(name="quantity")
     private int quantity;
 

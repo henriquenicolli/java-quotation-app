@@ -6,13 +6,16 @@ import lombok.Data;
 @Data
 public class QuotationDto {
 
-    @JsonProperty(value="expiration_date")
+    @JsonProperty(value="quotationName")
+    private String quotationName;
+
+    @JsonProperty(value="expirationDate")
     private String expirationDate;
 
-    @JsonProperty(value="delivery_date")
+    @JsonProperty(value="deliveryDate")
     private String deliveryDate;
 
-    @JsonProperty(value="delivery_value")
+    @JsonProperty(value="deliveryValue")
     private String deliveryValue;
 
     @JsonProperty(value="description")

@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+@CrossOrigin
 @RestController
 @RequestMapping("/v1/products")
 public class ProductController {
@@ -18,8 +19,7 @@ public class ProductController {
     private ProductService productService;
 
     private static final Logger LOGGER = LoggerFactory.getLogger(ProductController.class);
-
-    @CrossOrigin
+    
     @PostMapping(value = "/save")
     public ResponseEntity<String> saveProduct(@RequestBody ProductDto productDto) {
         LOGGER.info("Request para salvamento de produto recebido");
@@ -29,7 +29,6 @@ public class ProductController {
         return ResponseEntity.accepted().build();
     }
 
-    @CrossOrigin
     @GetMapping(value = "/findAll")
     public List<ProductDto> getAll() {
         LOGGER.info("Request para listar todos produtos recebido");
