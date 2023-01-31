@@ -13,8 +13,17 @@
 	<groupId>com.quotation.app</groupId>
 	<artifactId>quotation-app</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
+	<packaging>pom</packaging>
 	<name>quotation-app</name>
 	<description>Quotations app API</description>
+
+	<modules>
+		<module>quotation-application</module>
+		<module>quotation-core</module>
+		<module>quotation-model</module>
+        <module>quotation-persistence-mysql</module>
+		<module>quotation-business</module>
+	</modules>
 
 	<properties>
 		<java.version>17</java.version>
