@@ -2,6 +2,7 @@ package com.quotation.app.controller;
 
 import com.quotation.app.model.dto.QuotationDto;
 import com.quotation.app.service.QuotationService;
+import jakarta.validation.Valid;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,7 +22,7 @@ public class QuotationController {
     private static final Logger LOGGER = LoggerFactory.getLogger(ProductController.class);
 
     @PostMapping(value = "/save")
-    public ResponseEntity<String> saveQuotation(@RequestBody QuotationDto quotationDto) {
+    public ResponseEntity<String> saveQuotation(@Valid @RequestBody QuotationDto quotationDto) {
         LOGGER.info("Request para salvamento de cotacao recebido");
 
         quotationService.saveQuotation(quotationDto);

@@ -2,6 +2,7 @@ package com.quotation.app.controller;
 
 import com.quotation.app.model.dto.ProductDto;
 import com.quotation.app.service.ProductService;
+import jakarta.validation.Valid;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,7 +22,7 @@ public class ProductController {
     private static final Logger LOGGER = LoggerFactory.getLogger(ProductController.class);
     
     @PostMapping(value = "/save")
-    public ResponseEntity<String> saveProduct(@RequestBody ProductDto productDto) {
+    public ResponseEntity<String> saveProduct(@Valid @RequestBody ProductDto productDto) {
         LOGGER.info("Request para salvamento de produto recebido");
 
         productService.saveProduct(productDto);
