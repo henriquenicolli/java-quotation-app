@@ -35,7 +35,6 @@
 	<properties>
 		<java.version>17</java.version>
 		<org.mapstruct.version>1.5.3.Final</org.mapstruct.version>
-		<mainClass>com.quotation.app.Main</mainClass>
 	</properties>
 
 	<dependencies>
@@ -100,15 +99,6 @@
 
 	<build>
 		<plugins>
-
-			<plugin>
-				<groupId>org.springframework.boot</groupId>
-				<artifactId>spring-boot-maven-plugin</artifactId>
-				<version>3.0.1</version>
-				<configuration>
-					<skip>true</skip>
-				</configuration>
-			</plugin>
 
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
