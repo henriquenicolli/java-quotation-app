@@ -103,7 +103,6 @@
 
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
-<<<<<<< HEAD:app/pom.xml
 				<artifactId>spring-boot-maven-plugin</artifactId>
 				<version>3.0.1</version>
 				<configuration>
@@ -113,8 +112,6 @@
 
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
-=======
->>>>>>> e0427ccd0e57c64ead4ae042ccec639ff26cf509:pom.xml
 				<artifactId>spring-boot-starter-parent</artifactId>
 				<version>3.0.1</version>
 				<configuration>
